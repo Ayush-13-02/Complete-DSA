@@ -1,4 +1,5 @@
-// In Linear Search: We compare the target element to every element if target and the element is finded equal then give the answer according to the Qustions.
+// In Linear Search: We compare the target element to every element 
+// if target and the element is finded equal then give the answer according to the Qustions.
 
 // Implementations:
 #include <iostream>
