@@ -1,4 +1,4 @@
-<h2>Given two strings, S1 and S2, the task is to find the length of the Longest Common Subsequence, i.e. longest subsequence present in both of the strings. </h2>
+<h3>Given two strings, S1 and S2, the task is to find the length of the Longest Common Subsequence, i.e. longest subsequence present in both of the strings. </h3>
 
 E.g.
     S1 = AGGTAB, S2 = GXTXAYB
@@ -25,5 +25,14 @@ Because of the presence of these two properties we can use Dynamic programming o
 
     Create a recursive function. Also create a 2D array to store the result of a unique state. 
     During the recursion call, if the same state is called more than once, then we can directly return the answer stored for that state instead of calculating again.
+Time Complexity: O(m * n) where m and n are the string lengths.
+Auxiliary Space: O(m * n) Here the recursive stack space is ignored.
 
-<h4>Method-1 (Tabulation Approach):</h4>
+<h4>Method-3 (Tabulation Approach):</h4>
+    Create a 2D array dp[][] with rows and columns equal to the length of each input string plus 1 [the number of rows indicates the indices of S1 and the columns indicate the indices of S2].
+    Initialize the first row and column of the dp array to 0.
+    Iterate through the rows of the dp array, starting from 1 (say using iterator i).
+    For each i, iterate all the columns from j = 1 to n:
+    If S1[i-1] is equal to S2[j-1], set the current element of the dp array to the value of the element to (dp[i-1][j-1] + 1).
+    Else, set the current element of the dp array to the maximum value of dp[i-1][j] and dp[i][j-1].
+    After the nested loops, the last element of the dp array will contain the length of the LCS.
